@@ -1,14 +1,20 @@
 package edu.iest.examen2doparcial.adapters
 
 import android.content.Context
+import android.content.Context.MODE_PRIVATE
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
+import androidx.appcompat.app.AppCompatActivity
+import androidx.core.app.ActivityCompat.finishAffinity
 import androidx.recyclerview.widget.RecyclerView
+import edu.iest.examen2doparcial.Perfil
 import edu.iest.examen2doparcial.R
 import edu.iest.examen2doparcial.models.Menu //Importar esto para ArrayList<Menu>
+import kotlin.system.exitProcess
 
 class MenuAdapter(opcionesMenu: ArrayList<Menu>, context: Context) :
     RecyclerView.Adapter<MenuAdapter.ContenedorDeVista>(){
@@ -26,12 +32,27 @@ class MenuAdapter(opcionesMenu: ArrayList<Menu>, context: Context) :
                 imagen = view.findViewById(R.id.fotoGato)
                 titulo = view.findViewById(R.id.tituloOpcion)
 
-                //Aquí irian los OnClickListeners
+                imagen.setOnClickListener(this)
             }
 
         override fun onClick(p0: View?) {
-        //Aqui irian los onClickListeners
-        //Aquí podria ir lo de las preferencias
+            /*Si llegara a usar las preferencias guardadas para el clic
+             uso la linea de abajo*/
+            /*val miSharedPreferences = innerContext.getSharedPreferences("PERSISTENCIA",
+                AppCompatActivity.MODE_PRIVATE)*/
+
+            val menu: Menu = innerOpcionesMenu.get(adapterPosition)
+
+            /*Si fuera menu y cada imagen llevara a una pantalla distinta aqui
+            abajo irian los ifs como el ejemplo para ir a cada pantalla*/
+
+            if (menu.id == 2){
+                val i = Intent(innerContext, Perfil::class.java)
+                innerContext.startActivity(i)
+            }
+            if (menu.id == 4){
+                exitProcess(0)
+            }
         }
     }
 

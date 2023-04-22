@@ -10,7 +10,7 @@ class FakerMenu {
         opciones.add(Menu(1, R.drawable.cat,"Gatos"))
         opciones.add(Menu(2, R.drawable.profile,"Perfil"))
         opciones.add(Menu(3, R.drawable.config,"Configurar"))
-        opciones.add(Menu(2, R.drawable.close,"Cerrar"))
+        opciones.add(Menu(4, R.drawable.close,"Cerrar"))
 
         return opciones
     }

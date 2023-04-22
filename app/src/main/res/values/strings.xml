@@ -1,4 +1,9 @@
 <resources>
     <string name="app_name">Examen2doParcial</string>
     <string name="gatos">Gatos</string>
+    <string name="sin_perfil_creado">Sin Perfil Creado</string>
+    <string name="nombre_del_due_o">Nombre del Dueño:</string>
+    <string name="nombre_del_gato">Nombre del Gato</string>
+    <string name="edad_del_gato">Edad del Gato:</string>
+    <string name="boton_guardar">Boton Guardar</string>
 </resources>
